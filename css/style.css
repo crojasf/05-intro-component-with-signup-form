@@ -24,9 +24,6 @@ body {
   background-color: #ff7a7a;
   font-family: Poppins, sans-serif;
   font-size: 16px; }
-  @media (min-width: 1440px) {
-    body {
-      background-color: chocolate; } }
 
 /* 
 ======================
@@ -40,13 +37,38 @@ LAYOUT
   margin: 0 auto;
   padding: 0 1.5em;
   background-image: url(../images/bg-intro-mobile.png); }
+  @media (min-width: 1440px) {
+    .intro {
+      background-image: url(../images/bg-intro-desktop.png);
+      display: flex;
+      max-width: 1440px;
+      flex-direction: row;
+      height: 800px;
+      padding: 0 164px; } }
 
 .info {
   padding: 4em 0;
   color: white;
   text-align: center; }
+  @media (min-width: 1440px) {
+    .info {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%; } }
   .info__tittle {
     font-size: 2em; }
+    @media (min-width: 1440px) {
+      .info__tittle {
+        font-size: 3em; } }
+
+@media (min-width: 1440px) {
+  .signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%; } }
 
 .signup__title {
   color: white;
@@ -96,7 +118,7 @@ COMPONENTS
     font-weight: bold; }
   .form__input:active, .form__input:focus {
     outline: none;
-    border-color: #3e3c49; }
+    border-color: #6055a5; }
 
 .form__e-icon {
   position: absolute;
@@ -110,12 +132,12 @@ COMPONENTS
   display: block;
   color: #ff7a7a;
   text-align: right;
-  font-size: .8em;
-  padding-top: .25em; }
+  font-size: 0.8em;
+  padding-top: 0.25em; }
 
 .form__terms {
   text-align: center;
-  font-size: .65em;
+  font-size: 0.65em;
   padding: 0 2em;
   color: #b9b6d3; }
 
@@ -132,15 +154,21 @@ COMPONENTS
   width: 100%;
   padding: 1.5em 0 1.4em;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: bold; }
+  .btn:active, .btn:focus {
+    outline: none; }
   .btn--form {
     background-color: #38cc8c;
     box-shadow: inset 0px -5px 0px #2ba671;
     color: white; }
+    .btn--form:hover {
+      background-color: #78e2b4;
+      box-shadow: inset 0px -5px 0px #4eda9d; }
 
 .hidden {
   display: none; }
 
 .has-error {
-  border: 1px solid red; }
+  border: 1px solid #ff7a7a;
+  color: #ff7a7a; }

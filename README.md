@@ -19,8 +19,8 @@ Para preparar el entorno se debe instalar Node.js en el equipo e instalar *gulp*
 + Iniciar proyecto guardando los ficheros y subiéndolos a Github.
 + Crear la estructura HTML del componente a crear.
 + Crear estilos para Mobile First y retocar algunas etiquetas HTML.
-+ Agregar funcionalidades JavaScript
 + Aplicar MediaQuerys para estilos para Desktop y algunos ajustes finales.
++ Agregar funcionalidades JavaScript
 
 
 ## Demo
