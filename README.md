@@ -24,7 +24,7 @@ Para preparar el entorno se debe instalar Node.js en el equipo e instalar *gulp*
 
 
 ## Demo
-El resultado del proyecto puede verse [aquí](https://crojasf.github.io/04-base-apparel/).
+El resultado del proyecto puede verse [aquí](https://crojasf.github.io/05-intro-component-with-signup-form/).
 
 ![desktop-final](/design/desktop-final.png)
 
@@ -72,7 +72,7 @@ $ git init
 $ git add .
 $ git commit -m "Subir ficheros iniciales del proyecto"
 $ git branch -M main
-$ git remote add origin https://github.com/crojasf/04-base-apparel.git
+$ git remote add origin https://github.com/crojasf/05-intro-component-with-signup-form
 $ git push -u origin main
 ```
 

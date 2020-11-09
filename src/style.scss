@@ -1,4 +1,106 @@
+/* 
+======================
+UTILITIES
+======================
+*/
+
+
+// colors
+// -------------------------
+
+// fonts
+// -------------------------
+
+// breakpoints
+// -------------------------
+$bp-sm: 375px; // mobile
+$bp-lg: 1440px; // desktop
+
+$breakpoints: (
+  'sm': 			375px,
+  'lg': 			1440px,
+) !default;
+
+/* EJEMPLO respond-to
+.foo {
+  color: red;
+  @include respond-to('small') {
+    color: blue;
+  }
+}
+*/
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+
+
+/* 
+======================
+BASE
+======================
+*/
+// body
+// -------------------------
 
 body {
 	background-color: aqua;
+	@include respond-to('lg') {
+		background-color: chocolate;		
+	}
+}
+
+
+/* 
+======================
+LAYOUT
+======================
+*/
+
+// main
+// -------------------------
+
+// footer
+// -------------------------
+footer {
+	margin-top: 10px;
+}
+
+
+
+
+
+
+/* 
+======================
+COMPONENTS
+======================
+*/
+
+
+
+
+// helpers
+// -------------------------
+
+.hidden {
+	display: none;
+}
+
+// states
+// -------------------------
+
+.has-error {	
+	border: 1px solid red;
 }

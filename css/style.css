@@ -1,2 +1,42 @@
+/* 
+======================
+UTILITIES
+======================
+*/
+/* EJEMPLO respond-to
+.foo {
+  color: red;
+  @include respond-to('small') {
+    color: blue;
+  }
+}
+*/
+/* 
+======================
+BASE
+======================
+*/
 body {
   background-color: aqua; }
+  @media (min-width: 1440px) {
+    body {
+      background-color: chocolate; } }
+
+/* 
+======================
+LAYOUT
+======================
+*/
+footer {
+  margin-top: 10px; }
+
+/* 
+======================
+COMPONENTS
+======================
+*/
+.hidden {
+  display: none; }
+
+.has-error {
+  border: 1px solid red; }
