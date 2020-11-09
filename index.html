@@ -7,7 +7,10 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css" />
+
   <script src="js/scripts.js"></script>
 
 
@@ -37,38 +40,47 @@
     </div>
     <div class="signup">
       <header class="signup__header">
-        <div class="box box--signup">Try it free 7 days then $20/mo. thereafter</div>
+        <div class="box box--signup">
+          <div class="signup__title">
+            <span>Try it free 7 days</span> then $20/mo. thereafter
+          </div>
+        </div>
       </header>
       <main class="signup__main">
 
         <div class="box box--form">
           <form action="" class="form">
             <div class="form__line">
-              <input type="text" name="firstName" id="firstName" class="form__input" placeholder="First Name" />
-              <img src="images/icon-error.svg" alt="" class="form__e-icon" />
-              <span class="form__e-message">First Name cannot be empty</span>
+              <div class="form__field">
+                <input type="text" name="firstName" id="firstName" class="form__input" placeholder="First Name" />
+                <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
+              <span class="form__e-message hidden">First Name cannot be empty</span>
             </div>
             <div class="form__line">
-              <input type="text" name="lastName" id="lastName" class="form__input" placeholder="Last Name" />
-              <img src="images/icon-error.svg" alt="" class="form__e-icon"/>
-              <span class="form__e-message">Last Name cannot be empty</span>
+              <div class="form__field">
+                <input type="text" name="lastName" id="lastName" class="form__input" placeholder="Last Name" />
+                <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
+              <span class="form__e-message hidden">Last Name cannot be empty</span>
             </div>
             <div class="form__line">
-              <input type="text" name="emailAddress" id="emailAddress" class="form__input"
-                placeholder="Email Address" />
-              <img src="images/icon-error.svg" alt="" class="form__e-icon"/>
-              <span class="form__e-message">Email Address cannot be empty</span>
+              <div class="form__field">
+                <input type="email" name="emailAddress" id="emailAddress" class="form__input"
+                  placeholder="Email Address" />
+                <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
+              <span class="form__e-message hidden">Email Address cannot be empty</span>
             </div>
             <div class="form__line">
-              <input type="text" name="password" id="password" class="form__input" placeholder="Password" />
-              <img src="images/icon-error.svg" alt="" class="form__e-icon"/>
-              <span class="form__e-message">Password cannot be empty</span>
+              <div class="form__field">
+                <input type="password" name="password" id="password" class="form__input" placeholder="Password" />
+                <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
+              <span class="form__e-message hidden">Password cannot be empty</span>
             </div>
             <div class="form__line">
-              <button class="btn" type="button">Claim your free trial</button>
+              <button class="btn btn--form" type="button">Claim your free trial</button>
             </div>
             <div class="form__line">
-              <span>By clicking the button, you are agreeing to our <a href="#" class="form__link">Terms and Services</a></span>
+              <div class="form__terms">By clicking the button, you are agreeing to our <a href="#"
+                  class="form__link">Terms and Services</a></div>
             </div>
 
           </form>

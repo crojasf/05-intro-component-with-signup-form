@@ -16,8 +16,14 @@ UTILITIES
 BASE
 ======================
 */
+* {
+  box-sizing: border-box; }
+
 body {
-  background-color: aqua; }
+  margin: 0;
+  background-color: #ff7a7a;
+  font-family: Poppins, sans-serif;
+  font-size: 16px; }
   @media (min-width: 1440px) {
     body {
       background-color: chocolate; } }
@@ -27,14 +33,112 @@ body {
 LAYOUT
 ======================
 */
+.intro {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  background-image: url(../images/bg-intro-mobile.png); }
+
+.info {
+  padding: 4em 0;
+  color: white;
+  text-align: center; }
+  .info__tittle {
+    font-size: 2em; }
+
+.signup__title {
+  color: white;
+  text-align: center;
+  padding: 0 2em; }
+  .signup__title span {
+    font-weight: bold; }
+
 footer {
-  margin-top: 10px; }
+  margin-top: 50px; }
 
 /* 
 ======================
 COMPONENTS
 ======================
 */
+.box {
+  border-radius: 0.6em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 0.5em 0 rgba(62, 60, 73, 0.2); }
+  .box--signup {
+    background-color: #6055a5;
+    padding: 1em 1.5em; }
+  .box--form {
+    background-color: white;
+    padding: 1.5em; }
+
+.form__line {
+  margin-bottom: 10px; }
+
+.form__field {
+  position: relative; }
+
+.form__input {
+  font-family: Poppins, sans-serif;
+  width: 100%;
+  border: 1px solid #b9b6d3;
+  border-radius: 5px;
+  padding: 1em 3em 1em 1em;
+  color: #3e3c49;
+  font-weight: bold; }
+  .form__input::-moz-placeholder {
+    font-weight: bold; }
+  .form__input:-ms-input-placeholder {
+    font-weight: bold; }
+  .form__input::placeholder {
+    font-weight: bold; }
+  .form__input:active, .form__input:focus {
+    outline: none;
+    border-color: #3e3c49; }
+
+.form__e-icon {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 1.3em;
+  height: 1.25em; }
+
+.form__e-message {
+  display: block;
+  color: #ff7a7a;
+  text-align: right;
+  font-size: .8em;
+  padding-top: .25em; }
+
+.form__terms {
+  text-align: center;
+  font-size: .65em;
+  padding: 0 2em;
+  color: #b9b6d3; }
+
+.form__link {
+  color: #ff7a7a;
+  font-weight: bold;
+  text-decoration: none; }
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #38cc8c;
+  width: 100%;
+  padding: 1.5em 0 1.4em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: bold; }
+  .btn--form {
+    background-color: #38cc8c;
+    box-shadow: inset 0px -5px 0px #2ba671;
+    color: white; }
+
 .hidden {
   display: none; }
 

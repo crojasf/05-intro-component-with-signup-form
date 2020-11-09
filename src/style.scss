@@ -4,12 +4,21 @@ UTILITIES
 ======================
 */
 
-
 // colors
 // -------------------------
 
+$color-primary: hsl(0, 100%, 74%);
+$color-secondary: hsl(154, 59%, 51%);
+
+$color-accent: hsl(248, 32%, 49%);
+$color-neutral-dark: hsl(249, 10%, 26%);
+$color-neutral-light: hsl(246, 25%, 77%);
+
 // fonts
 // -------------------------
+
+$font-size: 16px;
+$font-family: Poppins, sans-serif;
 
 // breakpoints
 // -------------------------
@@ -17,8 +26,8 @@ $bp-sm: 375px; // mobile
 $bp-lg: 1440px; // desktop
 
 $breakpoints: (
-  'sm': 			375px,
-  'lg': 			1440px,
+	"sm": $bp-sm,
+	"lg": $bp-lg,
 ) !default;
 
 /* EJEMPLO respond-to
@@ -31,36 +40,38 @@ $breakpoints: (
 */
 
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  }
-
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Please make sure it is defined in `$breakpoints` map.";
-  }
+	}
 }
-
-
-
 
 /* 
 ======================
 BASE
 ======================
 */
+
+
+* {
+	box-sizing: border-box;}
+
 // body
 // -------------------------
 
 body {
-	background-color: aqua;
-	@include respond-to('lg') {
-		background-color: chocolate;		
+	margin: 0;
+	background-color: $color-primary;
+	font-family: $font-family;
+	font-size: $font-size;
+	@include respond-to("lg") {
+		background-color: chocolate;
 	}
 }
-
 
 /* 
 ======================
@@ -68,19 +79,51 @@ LAYOUT
 ======================
 */
 
-// main
+// intro
 // -------------------------
+
+.intro {
+	display: flex;
+	flex-direction: column;
+	max-width: $bp-sm;
+	margin: 0 auto;
+	padding: 0 1.5em;
+	background-image: url(../images/bg-intro-mobile.png);
+}
+
+// info
+// -------------------------
+
+.info {
+	padding: 4em 0;
+	color: white;
+	text-align: center;
+
+	&__tittle {
+		font-size: 2em;
+	}
+}
+
+// signup
+// -------------------------
+
+.signup {
+	&__title {
+		color: white;
+		text-align: center;
+		padding: 0 2em;
+
+		& span {
+			font-weight: bold;
+		}
+	}
+}
 
 // footer
 // -------------------------
 footer {
-	margin-top: 10px;
+	margin-top: 50px;
 }
-
-
-
-
-
 
 /* 
 ======================
@@ -88,7 +131,100 @@ COMPONENTS
 ======================
 */
 
+// box
+// -------------------------
 
+.box {
+	border-radius: 0.6em;
+	margin-bottom: 1.5em;
+	box-shadow: 0 0.5em 0 rgba($color-neutral-dark, 0.2);
+
+	&--signup {
+		background-color: $color-accent;
+		padding: 1em 1.5em;
+	}
+	&--form {
+		background-color: white;
+		padding: 1.5em;
+	}
+}
+
+// form
+// -------------------------
+
+.form {
+	&__line {
+		margin-bottom: 10px;
+	}
+	&__field {
+		position: relative;
+	}
+	&__input {
+		font-family: $font-family;
+		width: 100%;
+		border: 1px solid $color-neutral-light;
+		border-radius: 5px;
+		padding: 1em 3em 1em 1em;
+		color: $color-neutral-dark;
+		font-weight: bold;
+		&::placeholder {
+			font-weight: bold;
+		}
+		&:active,
+		&:focus {
+			outline: none;
+			border-color: $color-neutral-dark;
+		}
+	}
+	&__e-icon {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		right: 1.3em;
+		height: 1.25em;
+	}
+	&__e-message {
+		display: block;
+		color: $color-primary;
+		text-align: right;
+		font-size: .8em;
+		padding-top: .25em;
+	}
+	&__terms {
+		text-align: center;
+		font-size: .65em;
+		padding: 0 2em;
+		color: $color-neutral-light;
+	}
+	&__link {
+		color: $color-primary;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+
+
+// button
+// -------------------------
+.btn {
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	background-color: $color-secondary;
+	width: 100%;
+	padding: 1.5em 0 1.4em;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-weight: bold;
+	
+	&--form {
+		background-color: $color-secondary;
+		box-shadow: inset 0px -5px 0px darken($color-secondary,10%);
+		color: white;
+	}
+}
 
 
 // helpers
@@ -101,6 +237,6 @@ COMPONENTS
 // states
 // -------------------------
 
-.has-error {	
+.has-error {
 	border: 1px solid red;
 }
