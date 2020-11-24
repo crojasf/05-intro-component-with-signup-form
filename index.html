@@ -30,7 +30,7 @@
 
 <body>
 
-  <section class="intro">
+  <main class="intro">
 
     <div class="info">
       <h1 class="info__tittle">Learn to code by watching others</h1>
@@ -45,37 +45,36 @@
           </div>
         </div>
       </header>
-      <main class="signup__main">
+      <section class="signup__main">
 
         <div class="box box--form">
-          <form action="" class="form">
+          <form action="index.html" class="form" onsubmit="event.preventDefault();">
             <div class="form__line">
               <div class="form__field">
-                <input type="text" name="firstName" id="firstName" class="form__input" placeholder="First Name" />
+                <input type="text" name="firstName" id="firstName" class="form__input" placeholder="First Name" title="First Name" />
                 <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
               <span class="form__e-message hidden">First Name cannot be empty</span>
             </div>
             <div class="form__line">
               <div class="form__field">
-                <input type="text" name="lastName" id="lastName" class="form__input" placeholder="Last Name" />
+                <input type="text" name="lastName" id="lastName" class="form__input" placeholder="Last Name" title="Last Name" />
                 <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
               <span class="form__e-message hidden">Last Name cannot be empty</span>
             </div>
             <div class="form__line">
               <div class="form__field">
-                <input type="email" name="emailAddress" id="emailAddress" class="form__input"
-                  placeholder="Email Address" />
+                <input type="email" name="emailAddress" id="emailAddress" class="form__input" placeholder="Email Address" title="Email Address" />
                 <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
               <span class="form__e-message hidden">Looks like this is not an email</span>
             </div>
             <div class="form__line">
               <div class="form__field">
-                <input type="password" name="password" id="password" class="form__input" placeholder="Password" />
+                <input type="password" name="password" id="password" class="form__input" placeholder="Password" title="Password"/>
                 <img src="images/icon-error.svg" alt="" class="form__e-icon hidden" /></div>
               <span class="form__e-message hidden">Password cannot be empty</span>
             </div>
             <div class="form__line">
-              <button class="btn btn--form" id="formBtnSubmit" type="button">Claim your free trial</button>
+              <button class="btn btn--form" id="formBtnSubmit" type="submit">Claim your free trial</button>
             </div>
             <div class="form__line">
               <div class="form__terms">By clicking the button, you are agreeing to our <a href="#"
@@ -84,11 +83,11 @@
 
           </form>
         </div>
-      </main>
+      </section>
 
     </div>
 
-  </section>
+  </main>
 
 
 
